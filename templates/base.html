@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="utf-8">
+    {% block css %}
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="{{ get_url(path='css/style.css', trailing_slash=false) | safe }}"/>
+    {% endblock css %}
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav id="navbar">
+        <div id="navbar-title">
+            <a href="/">Mocka's Blog</a>
+        </div>
+        <div id="navbar-links">
+            <a href="/about">About</a>
+            <a href="/rss">Rss</a>
+        </div>
+    </nav>
+
+    {% if page.ancestors %}
+    <!-- Breadcrumbs -->
+    <div id="breadcrumbs">
+        {% for ancestor in page.ancestors %}
+        {% set section = get_section(path=ancestor) %}
+        » <a href="{{ section.path }}">{{ section.title }}</a>
+        {% endfor %}
+        » <a href="{{ page.path }}">{{ page.title }}</a>
+    </div>
+    {% endif %}
+
+    <!-- Content header -->
+    <header>
+        {% block header %}{% endblock header %}
+    </header>
+
+    <!-- Main content section -->
+    <main>
+       {% block content %}{% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <hr/>
+        © 2023 Powered by <a href="https://www.getzola.org/">Zola</a> – <a href="https://github.com/m0cka/pride">Theme</a> made by <a href="https://twitter.com/MockaNara">Mocka</a> ♥<br/>
+    </footer>
+</body>
+</html>

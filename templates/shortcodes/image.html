@@ -1,0 +1,6 @@
+<div class="img{% if class %} {{class}}{% endif %}">
+    <img src="{{src}}" {% if alt %}alt="{{alt}}"{% endif %}>
+    {% if description %}
+    <div class="description">{{description | safe}}</div>
+    {% endif %}
+</div>

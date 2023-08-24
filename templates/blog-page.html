@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block header %}
+<h1>{{ page.title }}</h1>
+<fieldset id="blogpost-info">
+  <legend>Info</legend>
+  <table>
+    <tbody>
+      <tr>
+        <td>Date</td>
+        <td><span class="metaData">{{ page.date }}</span></td>
+      </tr>
+      <tr>
+        <td>Author</td>
+        <td><span class="metaData">{{ page.extra.author }}</span></td>
+      </tr>
+      <tr id="blogpost-tags">
+        <td>Tags</td>
+        <td>
+          {% if page.taxonomies.tags %}
+          {% for tag in page.taxonomies.tags %}
+          <a href="/tags/{{ tag | slugify }}">#{{ tag }}</a>
+          {% endfor %}
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</fieldset>
+{% endblock header %}
+
+{% block content %}
+
+<!-- Table of Content -->
+{% if page.toc and page.extra.toc %}
+<fieldset id="toc">
+  <legend>Table of Content</legend>
+  <ul>
+    {% for h1 in page.toc %}
+    <li>
+      <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+      {% if h1.children %}
+      <ul>
+        {% for h2 in h1.children %}
+        <li>
+          <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+          <ul>
+            {% for h3 in h2.children %}
+            <li>
+              <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</fieldset>
+{% endif %}
+
+{{ page.content | safe }}
+{% endblock content %}

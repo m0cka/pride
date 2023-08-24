@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;700&family=Source+Code+Pro:wght@400;700&display=swap');
+
+/* ------------------------------------------------------------------------- */
+/* Colors                                                                    */
+/* ------------------------------------------------------------------------- */
+
+:root,
+:root.dark {
+    --bg-color: #231c23;
+    --code-bg-color: #fffefe20;
+    --color1-bright: #FFB346;
+    --color1-dim: #FFB34610;
+    --color1: #FFB346c0;
+    --color2-bright: #FFD050;
+    --color2-dim: #FFD05010;
+    --color2: #FFD050c0;
+    --color3-bright: #FFE08E;
+    --color3-dim: #FFE08E10;
+    --color3: #FFE08Ec0;
+    --color4-bright: #FFB092;
+    --color4-dim: #FFB09210;
+    --color4: #FFB092c0;
+    --color5-bright: #FF8776;
+    --color5-dim: #FF877610;
+    --color5: #FF8776c0;
+    --color6-bright: #FF6962;
+    --color6-dim: #FF696210;
+    --color6: #FF6962c0;
+    --fg-color-bit-dim: #fffefe10;
+    --fg-color-bright: #fffefe;
+    --fg-color-dim: #fffefe08;
+    --fg-color: #fffefee0;
+    --fieldset-border-color: #FFB34640;
+    --tag-color-dim: #FFE08E;
+    --tag-color: #FF8776;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Global settings                                                           */
+/* ------------------------------------------------------------------------- */
+
+html, body {
+    background: var(--bg-color);
+    color: var(--fg-color);
+    font-family: 'M PLUS Rounded 1c', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    margin: auto;
+    max-width: 40rem;
+    overflow-wrap: break-word;
+    padding: 1rem;
+    text-align: justify;
+}
+
+::-moz-selection {
+    background: var(--color1-bright);
+    color: var(--bg-color);
+}
+
+::selection {
+    background: var(--color1-bright);
+    color: var(--bg-color);
+}
+
+/* ------------------------------------------------------------------------- */
+/* Navbar                                                                    */
+/* ------------------------------------------------------------------------- */
+
+nav#navbar {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+nav#navbar > * {
+    max-width: fit-content;
+}
+
+nav#navbar > div#navbar-title > a {
+    color: var(--fg-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    max-width: fit-content;
+    text-decoration: none;
+}
+
+nav#navbar > div#navbar-links a {
+    background-color: var(--tag-color-dim);
+    border-radius: 0.2em;
+    color: var(--bg-color);
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-left: 0.3em;
+    padding: 0 0.3em;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+}
+
+nav#navbar > div#navbar-links a:first-child {
+    margin-left: 0;
+}
+
+nav#navbar > div#navbar-links a:hover {
+    background-color: var(--tag-color);
+    transition: background-color 0.25s ease;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Breadcrumbs                                                               */
+/* ------------------------------------------------------------------------- */
+
+div#breadcrumbs {
+    color: var(--fg-color-bright);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 0.9em;
+}
+
+div#breadcrumbs a {
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Headings                                                                  */
+/* ------------------------------------------------------------------------- */
+
+h1 {
+    background-color: var(--fg-color-dim);
+    border-radius: 0.2em;
+    border: 1px solid var(--color1-bright);
+    color: var(--fg-color-bright);
+    font-size: 1.3rem;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
+    background-color: var(--fg-color-dim);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-radius: 0.1em;
+    color: var(--fg-color-bright);
+    padding: 1px 5px;
+    position: relative;
+    text-align: left;
+    width: calc(100% - 10px);
+}
+
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    background-color: transparent;
+    color: var(--fg-color);
+    content: "▪";
+    display:inline-block;
+    padding-right: 10px;
+    position: absolute;
+    text-align: right;
+    transform:translateX(-100%);
+}
+
+blockquote h2::before,
+blockquote h3::before,
+blockquote h4::before,
+blockquote h5::before,
+blockquote ::before {
+    content: "";
+}
+
+h2 {
+    border-bottom-color: var(--color2-bright);
+    line-height: 2rem;
+}
+h2::before { color: var(--color2-bright); }
+
+h3 {
+    border-bottom-color: var(--color3-bright);
+    line-height: 1.8rem;
+}
+h3::before { color: var(--color3-bright); }
+
+h4 {
+    border-bottom-color: var(--color4-bright);
+    line-height: 1.6rem;
+}
+h4::before { color: var(--color4-bright); }
+
+h5 {
+    border-bottom-color: var(--color5-bright);
+    line-height: 1.4rem;
+}
+h5::before { color: var(--color5-bright); }
+
+h6 {
+    border-bottom-color: var(--color6-bright);
+    line-height: 1.2rem;
+}
+h6::before { color: var(--color6-bright); }
+
+/* ------------------------------------------------------------------------- */
+/* Article lists                                                             */
+/* ------------------------------------------------------------------------- */
+
+table#article-table > tbody > tr.article-info > td.article-date {
+    vertical-align: top;
+    max-width:100%;
+    white-space:nowrap;
+    color: var(--fg-color);
+    opacity: 0.5;
+    font-size: 0.9em;
+    padding-right: 0.5em;
+}
+
+table#article-table > tbody > tr.article-info > td.article-title > a {
+    vertical-align: top;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: var(--fg-color);
+    transition: color 0.25s ease;
+}
+
+table#article-table > tbody > tr.article-info > td.article-title > a:hover {
+    color: var(--color6-bright);
+    transition: color 0.25s ease;
+}
+
+div.article-view-all {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: 0;
+    max-width: max-content;
+}
+
+div.article-view-all > a {
+    display: inline-block;
+    color: var(--bg-color);
+    font-weight: bold;
+    background-color: var(--tag-color-dim);
+    padding: 0 0.3em;
+    margin-left: 0.3em;
+    border-radius: 0.2em;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.25s ease;
+}
+
+div.article-view-all:hover > a {
+    background-color: var(--tag-color);
+    transition: background-color 0.25s ease;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Blogpost info                                                             */
+/* ------------------------------------------------------------------------- */
+
+fieldset#blogpost-info {
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.2em;
+    border: 1px solid var(--fieldset-border-color);
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.7em;
+    margin-bottom: 1rem;
+}
+
+fieldset#blogpost-info > legend {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: var(--fg-color)
+}
+
+fieldset#blogpost-info > table > tbody > tr > td:first-child {
+    color: var(--color3-bright);
+    vertical-align: top;
+    text-align: right;
+    padding-right: 1em;
+    text-transform: uppercase;
+}
+
+fieldset#blogpost-info > table > tbody > tr#blogpost-tags a {
+    background-color: var(--tag-color-dim);
+    color: var(--bg-color);
+    padding: 0em 0.2em;
+    border-radius: 0.1em;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    font-size: 0.7rem;
+}
+
+fieldset#blogpost-info > table > tbody > tr#blogpost-tags a:hover {
+    background-color: var(--tag-color);
+    transition: background-color 0.2s ease;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Table of Content                                                          */
+/* ------------------------------------------------------------------------- */
+
+fieldset#toc {
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.2em;
+    border: 1px solid var(--fieldset-border-color);
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+fieldset#toc > legend {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: var(--fg-color)
+}
+
+fieldset#toc a {
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+fieldset#toc a:hover {
+    transition: color 0.25s ease;
+}
+
+fieldset#toc > ul > li > a {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--fg-color);
+}
+fieldset#toc > ul > li > ul > li > a {
+    font-size: 0.9em;
+    color: var(--fg-color);
+}
+fieldset#toc > ul > li > ul > li > ul > li > a {
+    font-size: 0.8em;
+    color: var(--fg-color);
+}
+fieldset#toc > ul > li > a:hover { color: var(--color1-bright); }
+fieldset#toc > ul > li > ul > li > a:hover { color: var(--color2-bright); }
+fieldset#toc > ul > li > ul > li > ul > li > a:hover { color: var(--color3-bright); }
+
+/* ------------------------------------------------------------------------- */
+/* Document elements                                                         */
+/* ------------------------------------------------------------------------- */
+
+blockquote {
+    background-color: var(--fg-color-dim);
+    border-left: 3px solid var(--color6);
+    border-radius: 0.1em;
+    margin-inline-end: 25px;
+    margin-inline-start: 25px;
+    padding: 1px 20px;
+    transition: background-color 0.25s ease;
+}
+
+blockquote:hover {
+    background-color: var(--fg-color-bit-dim);
+    border-left: 3px solid var(--color1);
+    transition: background-color 0.25s ease;
+}
+
+ul > li {
+    list-style-type: disc;
+}
+
+ul > li::marker { color: var(--color1-bright); }
+ol > li::marker { color: var(--color1-bright); }
+
+ul > li::marker { color: var(--color1-bright); }
+ul > li > ul > li::marker { color: var(--color2-bright); }
+ul > li > ul > li > ul > li::marker { color: var(--color3-bright); }
+ul > li > ul > li > ul > li > ul > li::marker { color: var(--color4-bright); }
+ul > li > ul > li > ul > li > ul > li > ul > li::marker { color: var(--color5-bright); }
+ul > li > ul > li > ul > li > ul > li > ul > li > ul li::marker { color: var(--color6-bright); }
+
+ol > li::marker { color: var(--color1-bright); }
+ol > li > ol > li::marker { color: var(--color2-bright); }
+ol > li > ol > li > ol > li::marker { color: var(--color3-bright); }
+ol > li > ol > li > ol > li > ol > li::marker { color: var(--color4-bright); }
+ol > li > ol > li > ol > li > ol > li > ol > li::marker { color: var(--color5-bright); }
+ol > li > ol > li > ol > li > ol > li > ol > li > ol li::marker { color: var(--color6-bright); }
+
+a {
+    color: var(--color3-bright);
+    text-underline-offset: 2px;
+    transition: color 0.25s ease;
+}
+
+a:hover {
+    color: var(--color6-bright);
+    transition: color 0.25s ease;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Code                                                                      */
+/* ------------------------------------------------------------------------- */
+
+pre, code {
+    font-family: 'Source Code Pro', monospace;
+}
+
+:not(pre) > code {
+    background-color: var(--fg-color-dim);
+    padding: .1em 0.2em;
+    font-size: 0.8rem;
+    color: var(--color6-bright);
+}
+
+div.code {
+    display: block;
+}
+
+div.code > div.code-header {
+    display: block;
+    background-color: var(--color3-bright);
+    margin-bottom: -1em;
+    padding: 0.2em 0.5em;
+    border-top-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+    transition: background-color 0.25s ease;
+}
+
+div.code:hover > div.code-header {
+    background-color: var(--color5-bright);
+    transition: background-color 0.25s ease;
+}
+
+div.code > div.code-header > pre {
+    padding: 0;
+    margin: 0;
+}
+
+div.code > div.code-header > pre > a {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+div.code > div.code-body {
+    border-bottom-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+}
+
+div.code > div.code-body > pre {
+    padding: 0.5em;
+    overflow: scroll;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Images                                                                    */
+/* ------------------------------------------------------------------------- */
+
+div.img > div.description {
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: center;
+}
+
+div.img.circle > img {
+    border-radius: 1000em;
+    overflow: hidden;
+}
+
+div.img.center {
+    margin: auto;
+    max-width: max-content;
+}
+
+div.img.avatar > img {
+    height: 150px;
+    margin-bottom: 0.5em;
+    outline-offset: 5px;
+    outline: 3px solid var(--color1);
+    transition: outline 0.25s ease;
+    width: 150px;
+}
+
+div.img.avatar:hover > img {
+    outline: 3px solid var(--color6-bright);
+    transition: outline 0.25s ease;
+}
+
+div.img.avatar {
+    margin: 2em auto 2em auto;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Footer                                                                    */
+/* ------------------------------------------------------------------------- */
+
+footer > hr {
+    border-color: var(--color1);
+    margin-top: 2rem;
+}
+
+footer {
+    font-size: 0.8em;
+    opacity: 0.75;
+    text-align: center;
+}

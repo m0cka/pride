@@ -1,0 +1,10 @@
+name = "pride"
+description = "Colorful and minimalist Zola theme."
+license = "GPL-3.0"
+homepage = "https://github.com/m0cka/pride"
+
+[extra]
+
+[author]
+name = "mocka"
+homepage = "https://mocka.ws/"
