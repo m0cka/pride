@@ -6,7 +6,7 @@
 
 :root,
 :root.dark {
-    --bg-color: #231c23;
+    --bg-color: #201c20;
     --code-bg-color: #fffefe20;
     --color1-bright: #FFB346;
     --color1-dim: #FFB34610;
@@ -95,7 +95,9 @@ nav#navbar > div#navbar-links a {
     font-size: 0.9em;
     font-weight: bold;
     margin-left: 0.3em;
-    padding: 0 0.3em;
+    padding: 0.1em 0.6em;
+    font-size: 0.75em;
+    text-transform: uppercase;
     text-decoration: none;
     transition: background-color 0.25s ease;
 }
@@ -116,7 +118,7 @@ nav#navbar > div#navbar-links a:hover {
 div#breadcrumbs {
     color: var(--fg-color-bright);
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     font-size: 0.9em;
 }
 
@@ -129,13 +131,15 @@ div#breadcrumbs a {
 /* ------------------------------------------------------------------------- */
 
 h1 {
-    background-color: var(--fg-color-dim);
+    background-color: var(--fg-color-bit-dim);
     border-radius: 0.2em;
-    border: 1px solid var(--color1-bright);
-    color: var(--fg-color-bright);
-    font-size: 1.3rem;
-    padding: 0.2rem 0.5rem;
-    text-align: center;
+    border-top: 2px solid var(--color1-bright);
+    border-bottom: 2px solid var(--color1-bright);
+    color: var(--fg-color);
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    text-align: left;
     text-transform: uppercase;
 }
 
@@ -149,6 +153,7 @@ h2, h3, h4, h5, h6 {
     position: relative;
     text-align: left;
     width: calc(100% - 10px);
+    text-transform: uppercase;
 }
 
 h2::before,
@@ -177,30 +182,35 @@ blockquote ::before {
 h2 {
     border-bottom-color: var(--color2-bright);
     line-height: 2rem;
+    font-size: 1.1rem;
 }
 h2::before { color: var(--color2-bright); }
 
 h3 {
     border-bottom-color: var(--color3-bright);
     line-height: 1.8rem;
+    font-size: 1.0rem;
 }
 h3::before { color: var(--color3-bright); }
 
 h4 {
     border-bottom-color: var(--color4-bright);
     line-height: 1.6rem;
+    font-size: 0.9rem;
 }
 h4::before { color: var(--color4-bright); }
 
 h5 {
     border-bottom-color: var(--color5-bright);
     line-height: 1.4rem;
+    font-size: 0.8rem;
 }
 h5::before { color: var(--color5-bright); }
 
 h6 {
     border-bottom-color: var(--color6-bright);
     line-height: 1.2rem;
+    font-size: 0.7rem;
 }
 h6::before { color: var(--color6-bright); }
 
@@ -212,8 +222,7 @@ table#article-table > tbody > tr.article-info > td.article-date {
     vertical-align: top;
     max-width:100%;
     white-space:nowrap;
-    color: var(--fg-color);
-    opacity: 0.5;
+    color: var(--color3);
     font-size: 0.9em;
     padding-right: 0.5em;
 }
@@ -243,11 +252,12 @@ div.article-view-all > a {
     color: var(--bg-color);
     font-weight: bold;
     background-color: var(--tag-color-dim);
-    padding: 0 0.3em;
+    padding: 0 0.5em;
     margin-left: 0.3em;
     border-radius: 0.2em;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 0.75em;
+    text-transform: uppercase;
     transition: background-color 0.25s ease;
 }
 
@@ -313,7 +323,7 @@ fieldset#toc {
     border-radius: 0.2em;
     border: 1px solid var(--fieldset-border-color);
     text-align: left;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 fieldset#toc > legend {
