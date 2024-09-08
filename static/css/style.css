@@ -29,7 +29,7 @@
     --fg-color-bit-dim: #fffefe10;
     --fg-color-bright: #fffefe;
     --fg-color-dim: #fffefe08;
-    --fg-color: #fffefee0;
+    --fg-color: #ffffff;
     --fieldset-border-color: #FFB34640;
     --tag-color-dim: #FFE08E;
     --tag-color: #FF8776;
@@ -43,7 +43,7 @@ html, body {
     background: var(--bg-color);
     color: var(--fg-color);
     font-family: 'M PLUS Rounded 1c', Arial, Helvetica, sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
     margin: auto;
     max-width: 40rem;
@@ -362,6 +362,10 @@ fieldset#toc > ul > li > ul > li > ul > li > a:hover { color: var(--color3-brigh
 /* ------------------------------------------------------------------------- */
 /* Document elements                                                         */
 /* ------------------------------------------------------------------------- */
+
+strong {
+  font-weight: bold;
+}
 
 blockquote {
     background-color: var(--fg-color-dim);
